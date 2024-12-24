@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/l76VjDna1jVLFhFGmrhzynVjoxjZtTgfnaysjJrzRj/2Zw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0/css/all.css" />
+        <link rel="stylesheet" href="style.css">
+    <title>جدول تنظيم الدروس</title>
+</head>
+
+<body>
+    <h1 class="animate__animated animate__fadeInDown">جدول تنظيم الدروس</h1>
+    <p class="animate__animated animate__fadeIn">يرجى ملء الجدول بالدروس والمواعيد المناسبة</p>
+    <button onclick="downloadTableAsImage()" class="download-image-btn animate__animated animate__fadeIn">تحميل الجدول <i class="fas fa-download"></i></button>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    اليوم
+                    <button onclick="openModal()" class="edit-btn" title="إضافة أو تعديل درس"><i
+                            class="fas fa-pencil-alt"></i></button>
+                </th>
+                <th>اسم الدرس</th>
+                <th>الميعاد</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-day="السبت" class="animate__animated animate__fadeInUp">
+                <td>
+                    <h4>السبت</h4>
+                </td>
+                <td data-lessons>
+                    <ul>
+                        <!-- الدروس سيتم عرضها هنا -->
+                    </ul>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 80%;"></div>
+                    </div>
+                </td>
+                <td data-times>
+                    <ul>
+                        <!-- المواعيد سيتم عرضها هنا -->
+                    </ul>
+                </td>
+            </tr>
+            <tr data-day="الأحد" class="animate__animated animate__fadeInUp">
+                <td>
+                    <h4>الأحد</h4>
+                </td>
+                <td data-lessons>
+                    <ul>
+                        <!-- الدروس سيتم عرضها هنا -->
+                    </ul>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 50%;"></div>
+                    </div>
+                </td>
+                <td data-times>
+                    <ul>
+                        <!-- المواعيد سيتم عرضها هنا -->
+                    </ul>
+                </td>
+            </tr>
+            <tr data-day="الإثنين" class="animate__animated animate__fadeInUp">
+                <td>
+                    <h4>الإثنين</h4>
+                </td>
+                <td data-lessons>
+                    <ul>
+                        <!-- الدروس سيتم عرضها هنا -->
+                    </ul>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 60%;"></div>
+                    </div>
+                </td>
+                <td data-times>
+                    <ul>
+                        <!-- المواعيد سيتم عرضها هنا -->
+                    </ul>
+                </td>
+            </tr>
+            <tr data-day="الثلاثاء" class="animate__animated animate__fadeInUp">
+                <td>
+                    <h4>الثلاثاء</h4>
+                </td>
+                <td data-lessons>
+                    <ul>
+                        <!-- الدروس سيتم عرضها هنا -->
+                    </ul>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 90%;"></div>
+                    </div>
+                </td>
+                <td data-times>
+                    <ul>
+                        <!-- المواعيد سيتم عرضها هنا -->
+                    </ul>
+                </td>
+            </tr>
+            <tr data-day="الأربعاء" class="animate__animated animate__fadeInUp">
+                <td>
+                    <h4>الأربعاء</h4>
+                </td>
+                <td data-lessons>
+                    <ul>
+                        <!-- الدروس سيتم عرضها هنا -->
+                    </ul>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 40%;"></div>
+                    </div>
+                </td>
+                <td data-times>
+                    <ul>
+                        <!-- المواعيد سيتم عرضها هنا -->
+                    </ul>
+                </td>
+            </tr>
+            <tr data-day="الخميس" class="animate__animated animate__fadeInUp">
+                <td>
+                    <h4>الخميس</h4>
+                </td>
+                <td data-lessons>
+                    <ul>
+                        <!-- الدروس سيتم عرضها هنا -->
+                    </ul>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                    </div>
+                </td>
+                <td data-times>
+                    <ul>
+                        <!-- المواعيد سيتم عرضها هنا -->
+                    </ul>
+                </td>
+            </tr>
+            <tr class="animate__animated animate__fadeInUp">
+                <td>
+                    <h4>الجمعه</h4>
+                </td>
+                <td colspan="2">
+                    <h5>اجازة <i class="fas fa-umbrella-beach icon" style="color: #f1c40f"></i></h5>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer class="animate__animated animate__fadeIn">
+        <p>تم التصميم بواسطة <a href="#">بوصتنا</a></p>
+    </footer>
+
+    <!-- Modal for Adding/Editing Lessons -->
+    <div id="lessonModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">×</span>
+                <h2 id="modalTitle">إضافة درس جديد</h2>
+            </div>
+            <div class="modal-body">
+                  <div id="error-message"></div>
+                <label for="lessonDay">اليوم:</label>
+                <select id="lessonDay" required>
+                    <option value="السبت">السبت</option>
+                    <option value="الأحد">الأحد</option>
+                    <option value="الإثنين">الإثنين</option>
+                    <option value="الثلاثاء">الثلاثاء</option>
+                    <option value="الأربعاء">الأربعاء</option>
+                    <option value="الخميس">الخميس</option>
+                </select>
+                <label for="lessonName">اسم الدرس:</label>
+                <input type="text" id="lessonName" required>
+                <label for="lessonTime">الميعاد:</label>
+                <input type="text" id="lessonTime" placeholder="مثال: 10:00 - 11:00" required>
+                <div class="modal-buttons">
+                    <button onclick="saveLesson()">حفظ</button>
+                    <button onclick="closeModal()">إلغاء</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Editing Lessons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+        integrity="sha512-BNaRQnYJYiPS/nNN0v4T1tfzBJG5Ts+PMpZcEz8QdrUOp1jzlTHpOOOie/HgPeQ8jLJNAQj1TLh7v7SL+dlmGw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
